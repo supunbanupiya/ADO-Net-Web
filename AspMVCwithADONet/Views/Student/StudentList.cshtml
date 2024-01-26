@@ -1,0 +1,43 @@
+﻿@model AspMVCwithADONet.Models.AllModel;
+@{
+    ViewData["Title"] = "Students List";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h3>Student List</h3>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+       
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Email Address</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model.studentList!=null && Model.studentList.Count > 0)
+                    {
+                        foreach(var item in Model.studentList)
+                        {
+                            <tr>
+                                
+                                <td>@item.StudentId</td>
+                                <td>@item.StudentName</td>
+                                <td>@item.EmailAddress</td>
+                               
+                            </tr>
+
+                        }
+                    }
+                }
+               
+            </tbody>
+        </table>
+    </div>
+</div>
